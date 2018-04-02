@@ -1,0 +1,93 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>니기리</title>
+	<link rel="stylesheet" href='{% static "css/indexstyle.css"%}'>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery.min.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<style type="text/css">
+		.cliniclist .reallist .ui-selecting { 
+			background: pink; 
+		}
+		.cliniclist .reallist .ui-selected {
+			background: hotpink;
+		}
+		.cliniclist .reallist {
+			
+			list-style-type: none; 
+			margin-top: 50px;
+			padding: 0;
+			width: 700px; 
+		}
+		.cliniclist .reallist li {
+
+			font-size: 20px; 
+			padding: .5em; 
+			border: 3px solid yellow; 
+		}
+
+	</style>
+</head>
+	<body>
+		<div class="box">
+			<form name = "searching" >
+		  		<div class="container-4">
+		    		<input type="search" id="search" placeholder="Search..." />
+		  		</div>
+		  		<div class="wrap">
+		  			<a href="#" class="button">Search</a>
+				</div>
+			</form>
+		</div>
+		<div class = "cliniclist">
+			<ul class="reallist">
+			  <li class="ui-widget-content" data-value='1'>남솔민</li>
+			  <li class="ui-widget-content" data-value='2'>김민중</li>
+			  <li class="ui-widget-content" data-value='3'>김새흰</li>
+			  <li class="ui-widget-content" data-value='4'>진소영</li>
+			  <li class="ui-widget-content" data-value='5'>박소연</li>
+			</ul>
+
+		</div>
+		<script>
+			$(function() {
+			  $( ".reallist" )
+			    .selectable()
+			    .on("selectablestop", function() {
+			      var my_clinics = [];
+			      $('.reallist .ui-selected').each(function() {
+			        my_clinics.push( $(this).data('value') );
+			      });
+			      console.log( my_clinics );
+			    });
+			});
+		</script>
+
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 37.56667, lng: 126.97806};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCW4ZDKJMBbcZhPsmSRSazM9vCR5wMyGGo&callback=initMap">
+    </script>
+		
+		<div class = "etc">
+
+
+		</div>
+	</body>
+</html>
+
+
