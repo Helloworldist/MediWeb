@@ -43,7 +43,7 @@ for(pageNum in 1:totalPN)
   for(i in 1:index)
   {
     ex <- data.frame(doc[2]$body$items[i])
-    if(length(table)==0)
+    if(length(table_info)==0)
     {
       table_info<-ex
     }

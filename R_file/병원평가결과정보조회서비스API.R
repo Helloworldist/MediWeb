@@ -28,7 +28,7 @@ for(a in 1:totalDN)
   doc1=xmlToList(doc1)
   
   ex <- data.frame(doc1[2]$body$items[1])
-  if(length(table)==0)
+  if(length(table_eval)==0)
   {
     table_eval<-ex
   }
@@ -73,6 +73,4 @@ for(a in run:100)
 }
 
 
-############ 테이블 통합 ###########3
 
-table_united1<-cbind(table_info, table_eval)
