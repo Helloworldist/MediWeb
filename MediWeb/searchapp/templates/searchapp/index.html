@@ -7,6 +7,11 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<script src="//code.jquery.com/jquery.min.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script type = "text/javascript" src = "jquery/lib/jquery.js"></script>
+	<script type = 'text/javascript' src = 'jquery/lib/jquery.bgiframe.min.js'></script>
+	<script type = 'text/javascript' src = 'jquery/lib/jquery.ajaxQueue.js'></script>
+	<script type = 'text/javascript' src = 'jquery/jquery.autocomplete.js'></script>
+	<link rel ="stylesheet" type = "text/css" href = "jquery/jquery.autocomplete.css"/>
 	<style type="text/css">
 		.cliniclist .reallist .ui-selecting { 
 			background: pink; 
@@ -29,9 +34,19 @@
 		}
 
 	</style>
+
 </head>
 	<body>
+		<script>
+				var availableTags =[
+					'남솔민 클리닉',
+					'박소영 의원',
+					'진소연 치과',
+					'김민중 종합병원'
+				];
+			</script>
 		<div class="box">
+
 			<form name = "searching" >
 		  		<div class="container-4">
 		    		<input type="search" id="search" placeholder="Search..." />
@@ -40,7 +55,18 @@
 		  			<a href="#" class="button">Search</a>
 				</div>
 			</form>
+			
+		
 		</div>
+		<script>
+				$(document).ready(function() {
+					$(".search").autocomplete(availableTags,{
+						matchContains: true,
+						selectFirst: false
+						
+					});
+				});
+			</script>
 		<div class = "cliniclist">
 			<ul class="reallist">
 			  <li class="ui-widget-content" data-value='1'>남솔민 클리닉</li>
