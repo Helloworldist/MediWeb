@@ -15,62 +15,39 @@ url_eval_3<-"&pageNo=1"
 url_eval_4<-"&ykiho="
 
 table_eval<- data.frame()
+table_ykihotmp<- data.frame()
 ykNum<-nrow(ykihoList)
 
 requestURL_eval <- paste(url_eval_1, category_eval, url_eval_2, key_eval, url_eval_3, url_eval_4, sep="")
 
 ############### 평가결과 긁어오기 ################
 
-for(a in 1:totalDN)
+run=1
+for(a in run:totalDN)
 {
   page = getForm(paste(requestURL_eval, ykihoList[a,1], sep= ""), query="")
   doc1=xmlParse(page)
   doc1=xmlToList(doc1)
   
   ex <- data.frame(doc1[2]$body$items[1])
+  if(length(ex)==0)
+    next
+  
   if(length(table_eval)==0)
   {
     table_eval<-ex
   }
   else
     table_eval<-rbind.fill(table_eval, ex)
-}
-
-
-
-
-######### 에러 발생 시 누락없이 긁어오기 ############
-
-run=1
-for(a in run:100)
-{
-  page = getForm(paste(requestURL_eval, ykihoList[a,1], sep= ""), query="")
-  doc1=xmlParse(page)
-  doc1=xmlToList(doc1)
   
-  ex <- data.frame(doc1[2]$body$items[1])
-  if(is.null(doc1[2]$body$items[1]))
+  if(length(table_ykihotmp)==0)
   {
-    print(paste("NULL 발생 : ", a, sep=""))
-    while(1){
-      page = getForm(paste(requestURL_eval, ykihoList[a,1], sep= ""), query="")
-      doc1=xmlParse(page)
-      doc1=xmlToList(doc1)
-      
-      ex <- data.frame(doc1[2]$body$items[1])
-      if(is.null(doc1[2]$body$items[1])==FALSE)
-        break
-    }
-  }
-  if(length(table)==0)
-  {
-    table_eval<-ex
+    table_ykihotmp<-as.data.frame(ykihoList[a,1])
   }
   else
-    table_eval<-rbind.fill(table_eval, ex)
-  print(a)
+  {
+    table_ykihotmp<-rbind.fill(table_ykihotmp, as.data.frame(ykihoList[a,1]))
+  }
   run=a+1
+  print(a)
 }
-
-
-
