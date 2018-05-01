@@ -1,7 +1,11 @@
 #######################################
 ###   테이블 통합 및 정의
 #######################################
+install.packages('ggmap')
+install.packages('ggplot2')
 
+library(ggmap)
+library(ggplot2)
 library(plyr)
 
 names(table_ykihotmp)<-c('item.ykiho')  # table_ykihotmp의 컬럼명 변경
@@ -49,8 +53,33 @@ analyze1<-function(sido, sggu)
   table_region<-data.frame() # 데이터프레임 초기화
   s<-start(sido, sggu)
   e<-end(sido, sggu, s)
-  print(paste(sido, "의 ", sggu, "병원 수 : ", e-s+1, sep=""))
+  print(paste("그 중 평가된 ", sido, "의 ", sggu, "병원 수는 ", e-s+1, "곳 이며", sep=""))
   table_region<<-table_united[s:e,] # 통합 테이블로부터 선택된 지역에 대한 병원을 분류
+}
+
+analyze1_sub<-function(sido, sggu)
+{
+  table_info<-table_info[order(table_info$item.sidoCdNm, table_info$item.sgguCdNm),]
+  
+  for(i in 1:nrow(table_info))
+  {
+    if((sido==as.character(table_info$item.sidoCdNm[i]))
+       &&(sggu==as.character(table_info$item.sgguCdNm[i]))) {
+      start_num=i
+      break
+    }
+  }
+  
+  for(i in start_num:nrow(table_info))
+  {
+    if(!((sido==as.character(table_info$item.sidoCdNm[i]))
+         &&(sggu==as.character(table_info$item.sgguCdNm[i])))) {
+      end_num=i-1
+      break
+    }
+  }
+  
+  print(paste0(sido, "에서 ",  sggu, "의 전체 병원 수는 ", end_num-start_num+1, "곳입니다"))
 }
 
 showHosp<-function()
@@ -75,11 +104,12 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd24),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '급성심근경색'={
            table_result<<-data.frame()
-           table_region<<-table_region[order(table_region$item.asmGrd1),]
+           table_region<<-table_region[order(table_region$item.asmGrd),]
            for(i in 1:nrow(table_region ))
            {
              if(as.character(table_region$item.asmGrd1[i])=='등급제외' 
@@ -88,6 +118,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd1),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '골수이식'={
@@ -101,6 +132,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd10),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '위암'={
@@ -116,6 +148,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd11, table_result$item.asmGrd16),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '간암'={
@@ -131,6 +164,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd12, table_result$item.asmGrd15),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '제왕절개'={
@@ -144,6 +178,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd13),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '관상동맥우회술'={
@@ -157,6 +192,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd14),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '뇌졸중'={
@@ -183,6 +219,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd20),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '당뇨병'={
@@ -196,6 +233,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd22),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '대장암'={
@@ -209,6 +247,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd23),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '유방암'={
@@ -222,6 +261,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd25),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '폐암'={
@@ -235,6 +275,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd26),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '천식'={
@@ -248,6 +289,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd27),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '폐질환'={
@@ -261,6 +303,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd28),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '폐렴'={
@@ -274,6 +317,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd29),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '고혈압'={
@@ -287,6 +331,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd3),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '중환자실'={
@@ -300,6 +345,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd30),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '혈액투석'={
@@ -313,6 +359,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd4),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '정신과'={
@@ -326,6 +373,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd5),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '고관절치환술'={
@@ -339,6 +387,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd7),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '췌장암'={
@@ -352,6 +401,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd8),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          '식도암'={
@@ -365,6 +415,7 @@ analyze2<-function(query){
              table_result<<-rbind.fill(table_result, table_region[i,])
            }
            table_result<<-table_result[order(table_result$item.asmGrd9),]
+           print(paste0(query,"에 대한 우수 평가 병원은 다음과 같습니다"))
            print(head(table_result$item.yadmNm.x, 10))
          },
          # 그 외
@@ -375,8 +426,29 @@ analyze2<-function(query){
                                              table_region$item.asmGrd6),]
            print(paste(query,"에 대한 평가가 없으므로 비질병평가항목으로 제공합니다", sep=""))
            print(head(table_result$item.yadmNm.x, 10))
-         }
-         )
+         })
 }
 
 
+#######################################
+###   분석
+#######################################
+options(digits = 13)
+
+search<-function(sido, sggu, disease){
+  print('======================================')
+  analyze1_sub(sido, sggu)
+  analyze1(sido, sggu)
+  analyze2(disease)
+  print('======================================')
+  print("병원에 대한 정보를 보시려면 h(병원 순서)를 입력해주세요. 예)h(1), h(9)")
+}
+
+h<-function(x) {
+  print(paste0("병원명 : ", as.character(table_result$item.yadmNm.x[x])))
+  print(paste0("주소 : ", as.character(table_result$item.addr.x[x])))
+  print(paste0("전화번호 : ", as.character(table_result$item.telno[x])))
+  HosLocation<-c(lon=as.numeric(as.character(table_result$item.XPos[x])),
+                 lat=as.numeric(as.character(table_result$item.YPos[x])))
+  ggmap(get_map(location = HosLocation, zoom = 17, source = 'google', maptype = 'roadmap'))
+}
