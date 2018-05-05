@@ -3,11 +3,13 @@ import os
 import rpy2.robjects.packages as rpackages
 import rpy2.robjects as robj
 
+
 utils=rpackages.importr('utils')	# R 기본 패키지 호출
 
+robj.r('setwd("~/Desktop")')
 r.library('plyr')
 
-robj.r('load("~/Desktop/MediWeb-master/R_file/분석1단계 RData.RData")')
+robj.r('load("~/Desktop/MediWeb-master/R_file/main.RData")')
 robj.r('table_region<-data.frame()')
 
 ##### Category by Region #####
@@ -67,7 +69,8 @@ def analyze2(lo3):
 				'next\n'
 				'table_result<<-rbind.fill(table_result, table_region[i,])}\n'
 				'table_result<<-table_result[order(table_result$item.asmGrd'+str(num)+'),]\n'
-				'print(head(table_result$item.yadmNm.x, 10))\n')
+				'print(head(table_result$item.yadmNm.x, 10))\n'
+				'write.csv(table_result, file="result.csv", row.names=FALSE)')
 		}
 	elif num == 12:
 		{
@@ -79,7 +82,8 @@ def analyze2(lo3):
 				'next\n'
 				'table_result<<-rbind.fill(table_result, table_region[i,])}\n'
 				'table_result<<-table_result[order(table_result$item.asmGrd'+str(num)+'),]\n'
-				'print(head(table_result$item.yadmNm.x, 10))\n')
+				'print(head(table_result$item.yadmNm.x, 10))\n'
+				'write.csv(table_result, file="result.csv", row.names=FALSE)')
 		}
 	else:
 		{
@@ -90,7 +94,8 @@ def analyze2(lo3):
 				'next\n'
 				'table_result<<-rbind.fill(table_result, table_region[i,])}\n'
 				'table_result<<-table_result[order(table_result$item.asmGrd'+str(num)+'),]\n'
-				'print(head(table_result$item.yadmNm.x, 10))\n')
+				'print(head(table_result$item.yadmNm.x, 10))\n'
+				'write.csv(table_result, file="result.csv", row.names=FALSE)')
 		}
 # execute
 lo1=str(input("시도입력 : "))
@@ -100,4 +105,3 @@ lo3=str(input("질병명 입력 : "))
 
 robj.r('analyze1('+lo1+','+lo2+')')
 analyze2(lo3)
-
