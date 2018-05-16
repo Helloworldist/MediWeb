@@ -29,7 +29,7 @@
 		}
 		.cliniclist .reallist li {
 
-			font-size: 20px; 
+			font-size: 10px; 
 			padding: .5em; 
 			border: 3px solid yellow; 
 		}
@@ -61,12 +61,15 @@
 			</script>
 		<div class="box">
 
-			<form name = "searching" method = "get">
+			<form action = "/search" name = "searching" method = "post">
+				{% csrf_token %} 
 		  		<div class="container-4">
-		    		<input type="search" id="search" placeholder="Search..." />
+		    		<input type="search" id="search" placeholder="" name ="lo1"/>
+		    		<input type="search" id="search" placeholder="" name ="lo2"/>
+		    		<input type="search" id="search" placeholder="" name ="lo3"/>
 		  		</div>
 		  		<div class="wrap">
-		  			<a href="#" class="button">Search</a>
+		  			<button class="button" type = "submit">Search</button>
 				</div>
 			</form>
 				<form action="#" onsubmit="getLatLng(document.getElementById('address').value); return(false);">
@@ -90,11 +93,11 @@
 		<div class = "cliniclist">
 
 			<ul class="reallist">
-			  <li class="ui-widget-content" data-value='1'>남솔민 클리닉</li>
-			  <li class="ui-widget-content" data-value='2'>김민중 의원</li>
-			  <li class="ui-widget-content" data-value='3'>김새흰 치과</li>
-			  <li class="ui-widget-content" data-value='4'>진소영 소아과</li>
-			  <li class="ui-widget-content" data-value='5'>박소연 한의원</li>
+			{% if lists %}
+			{% for list in lists %}
+			  <li class="ui-widget-content" data-value='1'>{{list.name}}</li>
+			{% endfor %}
+			{% endif %}
 			</ul>
 
 		</div>
