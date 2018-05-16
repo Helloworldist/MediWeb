@@ -129,9 +129,12 @@ def search(request):
 
 
 	for i in range(1,10):
-		lists = List(name=resultOfHos[i][18],
-				X = resultOfHos[i][16],
-				Y = resultOfHos[i][17])	# 병원명
+		try:
+			lists = List(name=resultOfHos[i][18],
+					X = resultOfHos[i][16],
+					Y = resultOfHos[i][17])	# 병원명
+		except:
+			pass
 		lists.save()
 
 	listss = List.objects.all()
