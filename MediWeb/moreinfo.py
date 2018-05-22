@@ -44,7 +44,7 @@ def getDetailinfo2(ykiho):
 		dgsbjtcdnm.append(i.text)
 
 	if dgsbjtcdnm is not None:
-		print(set(dgsbjtcdnm))
+		print(list(set(dgsbjtcdnm)))
 	else:
 		pass	
 
@@ -69,14 +69,14 @@ def getDetailinfo3(ykiho):
 		lineno.append(i.text)
 
 	if arivplc is not None:
-		print(set(arivplc))
+		print(list(set(arivplc)))
 	else:
-		pass
+		print("None")
 
 	if lineno is not None:	
-		print(set(lineno))
+		print(list(set(lineno)))
 	else:
-		pass
+		print("None")
 
 
 	
