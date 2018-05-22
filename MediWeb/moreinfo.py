@@ -36,10 +36,15 @@ def getDetailinfo2(ykiho):
 	html = req.text
 	soup = BeautifulSoup(html, 'html.parser')
 
-	dgsbjtcdnm = soup.find('dgsbjtcdnm')
+	dgsbjtcdnm=[]
+
+	dgsbjtcdnm_n = soup.find_all('dgsbjtcdnm')
+
+	for i in dgsbjtcdnm_n:
+		dgsbjtcdnm.append(i.text)
 
 	if dgsbjtcdnm is not None:
-		print(dgsbjtcdnm.text)
+		print(set(dgsbjtcdnm))
 	else:
 		pass	
 
@@ -63,8 +68,15 @@ def getDetailinfo3(ykiho):
 	for i in lineno_n:
 		lineno.append(i.text)
 
-	print(set(arivplc))
-	print(set(lineno))
+	if arivplc is not None:
+		print(set(arivplc))
+	else:
+		pass
+
+	if lineno is not None:	
+		print(set(lineno))
+	else:
+		pass
 
 
 	
