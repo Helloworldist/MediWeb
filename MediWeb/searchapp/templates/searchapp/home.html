@@ -1,0 +1,56 @@
+	{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HOLO</title>
+	<link rel="stylesheet" href='{% static "css/indexstyle.css"%}'>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery.min.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script type = "text/javascript" src = '{% static "jquery/lib/jquery.js" %}'></script>
+	<script type = "text/javascript" src = '{% static "jquery/lib/jquery.bgiframe.min.js" %}'></script>
+	<script type = "text/javascript" src = '{% static "jquery/lib/jquery.ajaxQueue.js" %}'></script>
+	<script type = "text/javascript" src = '{% static "jquery/jquery.autocomplete.js" %}'></script>
+	<link rel ="stylesheet" type = "text/css" href = '{% static "jquery/jquery.autocomplete.css" %}'/>
+	<style type="text/css">
+
+		.cliniclist .reallist .ui-selecting { 
+			background: pink; 
+		}
+		.cliniclist .reallist .ui-selected {
+			background: hotpink;
+		}
+		.cliniclist .reallist {
+			
+			list-style-type: none; 
+			margin-top: 50px;
+			padding: 0;
+			width: 700px; 
+		}
+		.cliniclist .reallist li {
+
+			font-size: 10px; 
+			padding: .5em; 
+			border: 3px solid yellow; 
+		}
+
+	</style>
+	
+</head>
+<body>
+		<div class="box">
+
+			<form action = "/search" name = "searching" method = "post">
+				{% csrf_token %} 
+		  		<div class="container-4">
+		    		<input type="search" id="search" placeholder="" name ="lo1"/>
+		    		<input type="search" id="search" placeholder="" name ="lo2"/>
+		    		<input type="search" id="search" placeholder="" name ="lo3"/>
+		  		</div>
+		  		<div class="wrap">
+		  			<button class="button" type = "submit">Search</button>
+				</div>
+			
+				</form>
+		</div>
+	</body>

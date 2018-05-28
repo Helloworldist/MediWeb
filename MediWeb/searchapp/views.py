@@ -53,90 +53,98 @@ robj.r('showHosp<-function(){'
 	# order
 robj.r('table_united<-table_united[order(table_united$item.sidoCdNm, table_united$item.sgguCdNm),]')
 
+def home(request):
+	return render(request, 'searchapp/home.html')
+
 def index(request):
 	return render(request, 'searchapp/index.html')
 
 
 def search(request):
-	listd = List.objects.all()
-	listd.delete()
+	if request.method == 'POST':
+		listd = List.objects.all()
+		listd.delete()
 
-	lo1 = '"'+str(request.POST['lo1'])+'"'
-	lo2 = '"'+str(request.POST['lo2'])+'"'
-	lo3 = str(request.POST['lo3'])
-	
-	robj.r('analyze1('+lo1+','+lo2+')')
+		lo1 = '"'+str(request.POST['lo1'])+'"'
+		lo2 = '"'+str(request.POST['lo2'])+'"'
+		lo3 = str(request.POST['lo3'])
+		
+		robj.r('analyze1('+lo1+','+lo2+')')
 
-	value = {"중이염":24, "급성심근경색":1, "골수이식":10, "위암":11, "간암":12,
-			"제왕절개":13, "관상동맥우회술":14, "뇌졸중":2, "요양병원":20, "당뇨병":22,
-			"대장암":23, "유방암":25, "폐암":26, "천식":27, "폐질환":28, "폐렴":29,
-			"고혈압":3, "중환자실":30, "혈액투석":4, "정신과":5, "고관절치환술":7,
-			"췌장암":8, "식도암":9}
+		value = {"중이염":24, "급성심근경색":1, "골수이식":10, "위암":11, "간암":12,
+				"제왕절개":13, "관상동맥우회술":14, "뇌졸중":2, "요양병원":20, "당뇨병":22,
+				"대장암":23, "유방암":25, "폐암":26, "천식":27, "폐질환":28, "폐렴":29,
+				"고혈압":3, "중환자실":30, "혈액투석":4, "정신과":5, "고관절치환술":7,
+				"췌장암":8, "식도암":9}
 
-	num = str(value.get(lo3))
-	
-	if lo3 not in value:
-		print("평가결과가 없음")
-	elif num == 11:
-		{
-			robj.r('table_result<<-data.frame()\n'
-				'table_region<<-table_region[order(table_region$item.asmGrd'+str(num)+'),]\n'
-				'for(i in 1:nrow(table_region)) {\n'
-				'if(((as.character(table_region$item.asmGrd'+str(num)+'[i])=="등급제외" || as.character(table_region$item.asmGrd'+str(num)+'[i])=="평가제외")) &&'
-				'(as.character(table_region$item.asmGrd16[i])=="등급제외" || as.character(table_region$item.asmGrd16[i])=="평가제외")))'
-				'next\n'
-				'table_result<<-rbind.fill(table_result, table_region[i,])}\n'
-				'table_result<<-table_result[order(table_result$item.asmGrd'+str(num)+'),]\n'
-				'print(head(table_result$item.yadmNm.x, 10))\n'
-				'write.csv(table_result, file="result.csv", row.names=FALSE)')
-		}
-	elif num == 12:
-		{
-			robj.r('table_result<<-data.frame()\n'
-				'table_region<<-table_region[order(table_region$item.asmGrd'+str(num)+'),]\n'
-				'for(i in 1:nrow(table_region)) {\n'
-				'if(((as.character(table_region$item.asmGrd'+str(num)+'[i])=="등급제외" || as.character(table_region$item.asmGrd'+str(num)+'[i])=="평가제외")) &&'
-				'(as.character(table_region$item.asmGrd15[i])=="등급제외" || as.character(table_region$item.asmGrd15[i])=="평가제외")))'
-				'next\n'
-				'table_result<<-rbind.fill(table_result, table_region[i,])}\n'
-				'table_result<<-table_result[order(table_result$item.asmGrd'+str(num)+'),]\n'
-				'print(head(table_result$item.yadmNm.x, 10))\n'
-				'write.csv(table_result, file="result.csv", row.names=FALSE)')
-		}
+		num = str(value.get(lo3))
+		
+		if lo3 not in value:
+			print("평가결과가 없음")
+		elif num == 11:
+			{
+				robj.r('table_result<<-data.frame()\n'
+					'table_region<<-table_region[order(table_region$item.asmGrd'+str(num)+'),]\n'
+					'for(i in 1:nrow(table_region)) {\n'
+					'if(((as.character(table_region$item.asmGrd'+str(num)+'[i])=="등급제외" || as.character(table_region$item.asmGrd'+str(num)+'[i])=="평가제외")) &&'
+					'(as.character(table_region$item.asmGrd16[i])=="등급제외" || as.character(table_region$item.asmGrd16[i])=="평가제외")))'
+					'next\n'
+					'table_result<<-rbind.fill(table_result, table_region[i,])}\n'
+					'table_result<<-table_result[order(table_result$item.asmGrd'+str(num)+'),]\n'
+					'print(head(table_result$item.yadmNm.x, 10))\n'
+					'write.csv(table_result, file="result.csv", row.names=FALSE)')
+			}
+		elif num == 12:
+			{
+				robj.r('table_result<<-data.frame()\n'
+					'table_region<<-table_region[order(table_region$item.asmGrd'+str(num)+'),]\n'
+					'for(i in 1:nrow(table_region)) {\n'
+					'if(((as.character(table_region$item.asmGrd'+str(num)+'[i])=="등급제외" || as.character(table_region$item.asmGrd'+str(num)+'[i])=="평가제외")) &&'
+					'(as.character(table_region$item.asmGrd15[i])=="등급제외" || as.character(table_region$item.asmGrd15[i])=="평가제외")))'
+					'next\n'
+					'table_result<<-rbind.fill(table_result, table_region[i,])}\n'
+					'table_result<<-table_result[order(table_result$item.asmGrd'+str(num)+'),]\n'
+					'print(head(table_result$item.yadmNm.x, 10))\n'
+					'write.csv(table_result, file="result.csv", row.names=FALSE)')
+			}
+		else:
+			{
+				robj.r('table_result<<-data.frame()\n'
+					'table_region<<-table_region[order(table_region$item.asmGrd'+str(num)+'),]\n'
+					'for(i in 1:nrow(table_region)) {\n'
+					'if(as.character(table_region$item.asmGrd'+str(num)+'[i])=="등급제외" || as.character(table_region$item.asmGrd'+str(num)+'[i])=="평가제외")\n'
+					'next\n'
+					'table_result<<-rbind.fill(table_result, table_region[i,])}\n'
+					'table_result<<-table_result[order(table_result$item.asmGrd'+str(num)+'),]\n'
+					'print(head(table_result$item.yadmNm.x, 10))\n'
+					'write.csv(table_result, file="result.csv", row.names=FALSE)')
+			}
+
+		resultOfHos = []
+		
+		file = open('./result.csv', 'r')
+		csvReader = csv.reader(file)
+
+		for row in csvReader:
+			resultOfHos.append(row)
+		print("read done.")
+
+		file.close()
+
+
+		for i in range(1,10):
+			try:
+				lists = List(name=resultOfHos[i][18],
+						X = resultOfHos[i][16],
+						Y = resultOfHos[i][17])	# 병원명
+			except:
+				pass
+			lists.save()
+
+		listss = List.objects.all()
+
+		return render(request, 'searchapp/index.html', {"lists" : listss})
 	else:
-		{
-			robj.r('table_result<<-data.frame()\n'
-				'table_region<<-table_region[order(table_region$item.asmGrd'+str(num)+'),]\n'
-				'for(i in 1:nrow(table_region)) {\n'
-				'if(as.character(table_region$item.asmGrd'+str(num)+'[i])=="등급제외" || as.character(table_region$item.asmGrd'+str(num)+'[i])=="평가제외")\n'
-				'next\n'
-				'table_result<<-rbind.fill(table_result, table_region[i,])}\n'
-				'table_result<<-table_result[order(table_result$item.asmGrd'+str(num)+'),]\n'
-				'print(head(table_result$item.yadmNm.x, 10))\n'
-				'write.csv(table_result, file="result.csv", row.names=FALSE)')
-		}
+		listss = List.objects.all()
 
-	resultOfHos = []
-	
-	file = open('./result.csv', 'r')
-	csvReader = csv.reader(file)
-
-	for row in csvReader:
-		resultOfHos.append(row)
-	print("read done.")
-
-	file.close()
-
-
-	for i in range(1,10):
-		try:
-			lists = List(name=resultOfHos[i][18],
-					X = resultOfHos[i][16],
-					Y = resultOfHos[i][17])	# 병원명
-		except:
-			pass
-		lists.save()
-
-	listss = List.objects.all()
-
-	return render(request, 'searchapp/index.html', {"lists" : listss})
+		return render(request, 'searchapp/index.html', {"lists" : listss})

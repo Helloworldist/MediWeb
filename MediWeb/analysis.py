@@ -6,10 +6,10 @@ import rpy2.robjects as robj
 
 utils=rpackages.importr('utils')	# R 기본 패키지 호출
 
-robj.r('setwd("~/Desktop")')
+robj.r('setwd("./")')
 r.library('plyr')
 
-robj.r('load("~/Desktop/MediWeb-master/R_file/main.RData")')
+robj.r('load("~/MediWeb-master/R_file/main.RData")')
 robj.r('table_region<-data.frame()')
 
 ##### Category by Region #####
@@ -98,8 +98,8 @@ def analyze2(lo3):
 				'write.csv(table_result, file="result.csv", row.names=FALSE)')
 		}
 # execute
-lo1=str(input("시도입력 : "))
-lo2=str(input("시군구입력 : "))
+lo1='"' + str(input("시도입력 : "))+'"'
+lo2='"' + str(input("시군구입력 : "))+'"'
 lo3=str(input("질병명 입력 : "))
 
 
