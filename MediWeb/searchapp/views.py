@@ -6,6 +6,7 @@ import rpy2.robjects.packages as rpackages  # rpy2의 패키지 모듈 임포트
 from rpy2.robjects.vectors import StrVector # R 스트링 베터
 import csv
 from .models import List
+from . import moreinfo
 
 # Create your views here.
 utils=rpackages.importr('utils')	# R 기본 패키지 호출
@@ -131,14 +132,31 @@ def search(request):
 
 		file.close()
 
-
+		info1 = ''
+		info2 = ''
+		info3 = ''
+		
 		for i in range(1,10):
 			try:
-				lists = List(name=resultOfHos[i][18],
+				for text in moreinfo.getDetailinfo1(resultOfHos[i][0]):
+					info1 = info1 + text
+
+				info2 = moreinfo.getDetailinfo2(resultOfHos[i][0])
+
+				for text in moreinfo.getDetailinfo3(resultOfHos[i][0]):
+					info3 = info3 + text
+					
+				lists = List(
+						index = i,
+						name=resultOfHos[i][18],
 						X = resultOfHos[i][16],
-						Y = resultOfHos[i][17])	# 병원명
+						Y = resultOfHos[i][17],
+						detailinfo1 = info1,
+						detailinfo2 = info2,
+						detailinfo3 = info3,)	# 병원명
 			except:
 				pass
+
 			lists.save()
 
 		listss = List.objects.all()
