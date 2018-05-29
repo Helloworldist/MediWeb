@@ -68,13 +68,15 @@
 
             	var detailinfo3 = document.getElementById("detailinfo1-3").value;
 
-            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+            	var address = document.getElementById('address1').value;   
+
+            	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
 
             	var infowindow = new google.maps.InfoWindow({
     			content: contentString
   				});
 
-                var address = document.getElementById('address1').value;            
+                         
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         map.setCenter(results[0].geometry.location);
@@ -102,12 +104,14 @@
 
             	var detailinfo3 = document.getElementById("detailinfo2-3").value;
 
-            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+            	 var address = document.getElementById('address2').value;   
+
+            	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
 
             	var infowindow = new google.maps.InfoWindow({
     			content: contentString
   				});
-                var address = document.getElementById('address2').value;            
+                        
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         map.setCenter(results[0].geometry.location);
@@ -135,12 +139,14 @@
 
             	var detailinfo3 = document.getElementById("detailinfo3-3").value;
 
-            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+            	var address = document.getElementById('address3').value;  
+
+            	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
 
             	var infowindow = new google.maps.InfoWindow({
     			content: contentString
   				});
-                var address = document.getElementById('address3').value;            
+                          
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         map.setCenter(results[0].geometry.location);
@@ -164,12 +170,14 @@
 
             	var detailinfo3 = document.getElementById("detailinfo4-3").value;
 
-            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+            	 var address = document.getElementById('address4').value;   
+
+            	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
 
             	var infowindow = new google.maps.InfoWindow({
     			content: contentString
   				});
-                var address = document.getElementById('address4').value;            
+                        
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         map.setCenter(results[0].geometry.location);
@@ -194,12 +202,15 @@
 
             	var detailinfo3 = document.getElementById("detailinfo5-3").value;
 
-            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+            	var address = document.getElementById('address5').value; 
+
+            	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
 
             	var infowindow = new google.maps.InfoWindow({
     			content: contentString
   				});
-                var address = document.getElementById('address5').value;            
+                
+
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         map.setCenter(results[0].geometry.location);
@@ -223,12 +234,14 @@
 
             	var detailinfo3 = document.getElementById("detailinfo6-3").value;
 
-            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+            	var address = document.getElementById('address6').value; 
+
+            	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
 
             	var infowindow = new google.maps.InfoWindow({
     			content: contentString
   				});
-                var address = document.getElementById('address6').value;            
+                           
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         map.setCenter(results[0].geometry.location);
@@ -251,12 +264,14 @@
 
             	var detailinfo7 = document.getElementById("detailinfo7-3").value;
 
-            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+            	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
+
+            	var address = document.getElementById('address7').value;
 
             	var infowindow = new google.maps.InfoWindow({
     			content: contentString
   				});
-                var address = document.getElementById('address7').value;            
+                            
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         map.setCenter(results[0].geometry.location);
@@ -281,12 +296,14 @@
 
             	var detailinfo3 = document.getElementById("detailinfo8-3").value;
 
-            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+            	var address = document.getElementById('address8').value; 
+
+            	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
 
             	var infowindow = new google.maps.InfoWindow({
     			content: contentString
   				});
-                var address = document.getElementById('address8').value;            
+                           
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         map.setCenter(results[0].geometry.location);
@@ -309,13 +326,14 @@
             	var detailinfo2 = document.getElementById("detailinfo9-2").value;
 
             	var detailinfo3 = document.getElementById("detailinfo9-3").value;
+            	 var address = document.getElementById('address9').value;  
 
-            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+            	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
 
             	var infowindow = new google.maps.InfoWindow({
     			content: contentString
   				});
-                var address = document.getElementById('address9').value;            
+                         
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         map.setCenter(results[0].geometry.location);
@@ -338,12 +356,14 @@
 
             	var detailinfo3 = document.getElementById("detailinfo10-3").value;
 
-            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+            	var address = document.getElementById('address10').value;    
+
+            	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
 
             	var infowindow = new google.maps.InfoWindow({
     			content: contentString
   				});
-                var address = document.getElementById('address10').value;            
+                        
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         map.setCenter(results[0].geometry.location);
@@ -402,6 +422,7 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo1-1" name = "name" value="{{list.detailinfo1}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo1-2" name = "name" value="{{list.detailinfo2}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo1-3" name = "name" value="{{list.detailinfo3}}">
+			<input type = "textbox" style = "display:none;" id = "address1" name = "name" value="{{list.name}}">
 			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress1()" ></li>
 			{% endif %}
 			{% endfor %}
