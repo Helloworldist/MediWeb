@@ -61,8 +61,20 @@
             }
             google.maps.event.addDomListener(window, 'load', getLocation);
             
-            function codeAddress() {
-                var address = document.getElementById('address').value;            
+            function codeAddress1() {
+            	var detailinfo1 = document.getElementById("detailinfo1-1").value;
+
+            	var detailinfo2 = document.getElementById("detailinfo1-2").value;
+
+            	var detailinfo3 = document.getElementById("detailinfo1-3").value;
+
+            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+
+            	var infowindow = new google.maps.InfoWindow({
+    			content: contentString
+  				});
+
+                var address = document.getElementById('address1').value;            
                 geocoder.geocode( { 'address': address}, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         map.setCenter(results[0].geometry.location);
@@ -70,12 +82,283 @@
                             map: map,
                             position: results[0].geometry.location
                         });
+
+                        marker.addListener('click', function() {
+				  		infowindow.open(map, marker);
+				 		});
+                    } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                    }
+                });
+
+               
+
+            }
+
+             function codeAddress2() {
+             	var detailinfo1 = document.getElementById("detailinfo2-1").value;
+
+            	var detailinfo2 = document.getElementById("detailinfo2-2").value;
+
+            	var detailinfo3 = document.getElementById("detailinfo2-3").value;
+
+            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+
+            	var infowindow = new google.maps.InfoWindow({
+    			content: contentString
+  				});
+                var address = document.getElementById('address2').value;            
+                geocoder.geocode( { 'address': address}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        map.setCenter(results[0].geometry.location);
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location
+                        });
+
+                        marker.addListener('click', function() {
+				  		infowindow.open(map, marker);
+				 		});
+                    } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                    }
+                });
+                    marker.addListener('click', function() {
+				  	infowindow.open(map, marker);
+				 });
+            }
+
+ 			function codeAddress3() {
+ 				var detailinfo1 = document.getElementById("detailinfo3-1").value;
+
+            	var detailinfo2 = document.getElementById("detailinfo3-2").value;
+
+            	var detailinfo3 = document.getElementById("detailinfo3-3").value;
+
+            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+
+            	var infowindow = new google.maps.InfoWindow({
+    			content: contentString
+  				});
+                var address = document.getElementById('address3').value;            
+                geocoder.geocode( { 'address': address}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        map.setCenter(results[0].geometry.location);
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location
+                        });
+	                    marker.addListener('click', function() {
+					  	infowindow.open(map, marker);
+				 });
+                    } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                    }
+                });
+                
+            }
+             function codeAddress4() {
+             	var detailinfo1 = document.getElementById("detailinfo4-1").value;
+
+            	var detailinfo2 = document.getElementById("detailinfo4-2").value;
+
+            	var detailinfo3 = document.getElementById("detailinfo4-3").value;
+
+            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+
+            	var infowindow = new google.maps.InfoWindow({
+    			content: contentString
+  				});
+                var address = document.getElementById('address4').value;            
+                geocoder.geocode( { 'address': address}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        map.setCenter(results[0].geometry.location);
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location
+                        });
+                        marker.addListener('click', function() {
+				  		infowindow.open(map, marker);
+				 });
+                    } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                    }
+                });
+             
+            }
+
+             function codeAddress5() {
+             	var detailinfo1 = document.getElementById("detailinfo5-1").value;
+
+            	var detailinfo2 = document.getElementById("detailinfo5-2").value;
+
+            	var detailinfo3 = document.getElementById("detailinfo5-3").value;
+
+            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+
+            	var infowindow = new google.maps.InfoWindow({
+    			content: contentString
+  				});
+                var address = document.getElementById('address5').value;            
+                geocoder.geocode( { 'address': address}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        map.setCenter(results[0].geometry.location);
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location
+                        });
+                    marker.addListener('click', function() {
+				  	infowindow.open(map, marker);
+				 });
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
                 });
             }
 
+ 			function codeAddress6() {
+ 				var detailinfo1 = document.getElementById("detailinfo6-1").value;
+
+            	var detailinfo2 = document.getElementById("detailinfo6-2").value;
+
+            	var detailinfo3 = document.getElementById("detailinfo6-3").value;
+
+            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+
+            	var infowindow = new google.maps.InfoWindow({
+    			content: contentString
+  				});
+                var address = document.getElementById('address6').value;            
+                geocoder.geocode( { 'address': address}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        map.setCenter(results[0].geometry.location);
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location
+                        });
+                    marker.addListener('click', function() {
+				  	infowindow.open(map, marker);
+				 });
+                    } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                    }
+                });
+            }
+             function codeAddress7() {
+             	var detailinfo7 = document.getElementById("detailinfo7-1").value;
+
+            	var detailinfo7 = document.getElementById("detailinfo7-2").value;
+
+            	var detailinfo7 = document.getElementById("detailinfo7-3").value;
+
+            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+
+            	var infowindow = new google.maps.InfoWindow({
+    			content: contentString
+  				});
+                var address = document.getElementById('address7').value;            
+                geocoder.geocode( { 'address': address}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        map.setCenter(results[0].geometry.location);
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location
+                        });
+
+                    marker.addListener('click', function() {
+				  	infowindow.open(map, marker);
+				 });
+                    } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                    }
+                });
+            }
+
+             function codeAddress8() {
+             	var detailinfo1 = document.getElementById("detailinfo8-1").value;
+
+            	var detailinfo2 = document.getElementById("detailinfo8-2").value;
+
+            	var detailinfo3 = document.getElementById("detailinfo8-3").value;
+
+            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+
+            	var infowindow = new google.maps.InfoWindow({
+    			content: contentString
+  				});
+                var address = document.getElementById('address8').value;            
+                geocoder.geocode( { 'address': address}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        map.setCenter(results[0].geometry.location);
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location
+                        });
+                    marker.addListener('click', function() {
+				  	infowindow.open(map, marker);
+				 });
+                    } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                    }
+                });
+            }
+
+ 			function codeAddress9() {
+ 				var detailinfo1 = document.getElementById("detailinfo9-1").value;
+
+            	var detailinfo2 = document.getElementById("detailinfo9-2").value;
+
+            	var detailinfo3 = document.getElementById("detailinfo9-3").value;
+
+            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+
+            	var infowindow = new google.maps.InfoWindow({
+    			content: contentString
+  				});
+                var address = document.getElementById('address9').value;            
+                geocoder.geocode( { 'address': address}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        map.setCenter(results[0].geometry.location);
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location
+                        });
+                    marker.addListener('click', function() {
+				  	infowindow.open(map, marker);
+				 });
+                    } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                    }
+                });
+            }
+            function codeAddress10() {
+            	var detailinfo1 = document.getElementById("detailinfo10-1").value;
+
+            	var detailinfo2 = document.getElementById("detailinfo10-2").value;
+
+            	var detailinfo3 = document.getElementById("detailinfo10-3").value;
+
+            	var contentString = '<h2>' + detailinfo1+'</h2>'+detailinfo2+'<br>'+detailinfo3
+
+            	var infowindow = new google.maps.InfoWindow({
+    			content: contentString
+  				});
+                var address = document.getElementById('address10').value;            
+                geocoder.geocode( { 'address': address}, function(results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        map.setCenter(results[0].geometry.location);
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: results[0].geometry.location
+                        });
+                    marker.addListener('click', function() {
+				  	infowindow.open(map, marker);
+				 });
+                    } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                    }
+                });
+            }
 		</script>
 
 </head>
@@ -115,12 +398,123 @@
 			<ul class="reallist">
 			{% if lists %}
 			{% for list in lists %}
-			
-			<input type = "textbox" style = "display:none;" id = "address" name = "name" value="{{list.name}}">
-			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress()" ></li>
-		
+			{% if list.index == 1%}
+			<input type = "textbox" style = "display:none;" id = "detailinfo1-1" name = "name" value="{{list.detailinfo1}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo1-2" name = "name" value="{{list.detailinfo2}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo1-3" name = "name" value="{{list.detailinfo3}}">
+			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress1()" ></li>
+			{% endif %}
 			{% endfor %}
 			{% endif %}
+
+
+			{% if lists %}
+			{% for list in lists %}
+			{% if list.index == 2%}
+			<input type = "textbox" style = "display:none;" id = "detailinfo2-1" name = "name" value="{{list.detailinfo1}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo2-2" name = "name" value="{{list.detailinfo2}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo2-3" name = "name" value="{{list.detailinfo3}}">
+			<input type = "textbox" style = "display:none;" id = "address2" name = "name" value="{{list.name}}">
+			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress2()" ></li>
+			{% endif %}
+			{% endfor %}
+			{% endif %}
+
+			{% if lists %}
+			{% for list in lists %}
+			{% if list.index == 3%}
+			<input type = "textbox" style = "display:none;" id = "detailinfo3-1" name = "name" value="{{list.detailinfo1}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo3-2" name = "name" value="{{list.detailinfo2}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo3-3" name = "name" value="{{list.detailinfo3}}">
+			<input type = "textbox" style = "display:none;" id = "address3" name = "name" value="{{list.name}}">
+			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress3()" ></li>
+			{% endif %}
+			{% endfor %}
+			{% endif %}
+			{% if lists %}
+			{% for list in lists %}
+			{% if list.index == 4%}
+			<input type = "textbox" style = "display:none;" id = "detailinfo4-1" name = "name" value="{{list.detailinfo1}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo4-2" name = "name" value="{{list.detailinfo2}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo4-3" name = "name" value="{{list.detailinfo3}}">
+			<input type = "textbox" style = "display:none;" id = "address4" name = "name" value="{{list.name}}">
+			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress4()" ></li>
+			{% endif %}
+			{% endfor %}
+			{% endif %}
+
+
+			{% if lists %}
+			{% for list in lists %}
+			{% if list.index == 5%}
+			<input type = "textbox" style = "display:none;" id = "detailinfo5-1" name = "name" value="{{list.detailinfo1}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo5-2" name = "name" value="{{list.detailinfo2}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo5-3" name = "name" value="{{list.detailinfo3}}">
+			<input type = "textbox" style = "display:none;" id = "address5" name = "name" value="{{list.name}}">
+			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress5()" ></li>
+			{% endif %}
+			{% endfor %}
+			{% endif %}
+
+			{% if lists %}
+			{% for list in lists %}
+			{% if list.index == 6%}
+			<input type = "textbox" style = "display:none;" id = "detailinfo6-1" name = "name" value="{{list.detailinfo1}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo6-2" name = "name" value="{{list.detailinfo2}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo6-3" name = "name" value="{{list.detailinfo3}}">
+			<input type = "textbox" style = "display:none;" id = "address6" name = "name" value="{{list.name}}">
+			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress6()" ></li>
+			{% endif %}
+			{% endfor %}
+			{% endif %}
+			{% if lists %}
+			{% for list in lists %}
+			{% if list.index == 7%}
+			<input type = "textbox" style = "display:none;" id = "detailinfo7-1" name = "name" value="{{list.detailinfo1}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo7-2" name = "name" value="{{list.detailinfo2}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo7-3" name = "name" value="{{list.detailinfo3}}">
+			<input type = "textbox" style = "display:none;" id = "address7" name = "name" value="{{list.name}}">
+			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress7()" ></li>
+			{% endif %}
+			{% endfor %}
+			{% endif %}
+
+
+			{% if lists %}
+			{% for list in lists %}
+			{% if list.index == 8%}
+			<input type = "textbox" style = "display:none;" id = "detailinfo8-1" name = "name" value="{{list.detailinfo1}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo8-2" name = "name" value="{{list.detailinfo2}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo8-3" name = "name" value="{{list.detailinfo3}}">
+			<input type = "textbox" style = "display:none;" id = "address8" name = "name" value="{{list.name}}">
+			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress8()" ></li>
+			{% endif %}
+			{% endfor %}
+			{% endif %}
+
+			{% if lists %}
+			{% for list in lists %}
+			{% if list.index == 9%}
+			<input type = "textbox" style = "display:none;" id = "detailinfo9-1" name = "name" value="{{list.detailinfo1}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo9-2" name = "name" value="{{list.detailinfo2}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo9-3" name = "name" value="{{list.detailinfo3}}">
+			<input type = "textbox" style = "display:none;" id = "address9" name = "name" value="{{list.name}}">
+			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress9()" ></li>
+			{% endif %}
+			{% endfor %}
+			{% endif %}
+			{% if lists %}
+			{% for list in lists %}
+			{% if list.index == 10%}
+			<input type = "textbox" style = "display:none;" id = "detailinfo10-1" name = "name" value="{{list.detailinfo1}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo10-2" name = "name" value="{{list.detailinfo2}}">
+			<input type = "textbox" style = "display:none;" id = "detailinfo10-3" name = "name" value="{{list.detailinfo3}}">
+			<input type = "textbox" style = "display:none;" id = "address10" name = "name" value="{{list.name}}">
+			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress10()" ></li>
+			{% endif %}
+			{% endfor %}
+			{% endif %}
+
 			</ul>
 
 		</div>
