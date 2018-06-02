@@ -88,6 +88,11 @@
                         marker.addListener('click', function() {
 				  		infowindow.open(map, marker);
 				 		});
+				 	document.getElementById('cname').innerHTML = address
+				 	document.getElementById('title').innerHTML = detailinfo1
+				 	document.getElementById('content').innerHTML = detailinfo2
+				 	document.getElementById('subcontent').innerHTML = detailinfo3
+
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -123,6 +128,10 @@
                         marker.addListener('click', function() {
 				  		infowindow.open(map, marker);
 				 		});
+				 	document.getElementById('cname').innerHTML = address
+				 	document.getElementById('title').innerHTML = detailinfo1
+				 	document.getElementById('content').innerHTML = detailinfo2
+				 	document.getElementById('subcontent').innerHTML = detailinfo3
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -156,7 +165,12 @@
                         });
 	                    marker.addListener('click', function() {
 					  	infowindow.open(map, marker);
+
 				 });
+	                document.getElementById('cname').innerHTML = address
+				 	document.getElementById('title').innerHTML = detailinfo1
+				 	document.getElementById('content').innerHTML = detailinfo2
+				 	document.getElementById('subcontent').innerHTML = detailinfo3
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -188,6 +202,10 @@
                         marker.addListener('click', function() {
 				  		infowindow.open(map, marker);
 				 });
+                    document.getElementById('cname').innerHTML = address
+				 	document.getElementById('title').innerHTML = detailinfo1
+				 	document.getElementById('content').innerHTML = detailinfo2
+				 	document.getElementById('subcontent').innerHTML = detailinfo3
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -221,6 +239,10 @@
                     marker.addListener('click', function() {
 				  	infowindow.open(map, marker);
 				 });
+                    document.getElementById('cname').innerHTML = address
+				 	document.getElementById('title').innerHTML = detailinfo1
+				 	document.getElementById('content').innerHTML = detailinfo2
+				 	document.getElementById('subcontent').innerHTML = detailinfo3
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -252,6 +274,10 @@
                     marker.addListener('click', function() {
 				  	infowindow.open(map, marker);
 				 });
+                    document.getElementById('cname').innerHTML = address
+				 	document.getElementById('title').innerHTML = detailinfo1
+				 	document.getElementById('content').innerHTML = detailinfo2
+				 	document.getElementById('subcontent').innerHTML = detailinfo3
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -283,6 +309,10 @@
                     marker.addListener('click', function() {
 				  	infowindow.open(map, marker);
 				 });
+                    document.getElementById('cname').innerHTML = address
+				 	document.getElementById('title').innerHTML = detailinfo1
+				 	document.getElementById('content').innerHTML = detailinfo2
+				 	document.getElementById('subcontent').innerHTML = detailinfo3
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -314,6 +344,10 @@
                     marker.addListener('click', function() {
 				  	infowindow.open(map, marker);
 				 });
+                    document.getElementById('cname').innerHTML = address
+				 	document.getElementById('title').innerHTML = detailinfo1
+				 	document.getElementById('content').innerHTML = detailinfo2
+				 	document.getElementById('subcontent').innerHTML = detailinfo3
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -344,6 +378,10 @@
                     marker.addListener('click', function() {
 				  	infowindow.open(map, marker);
 				 });
+                    document.getElementById('cname').innerHTML = address
+				 		document.getElementById('title').innerHTML = detailinfo1
+				 		document.getElementById('content').innerHTML = detailinfo2
+				 		document.getElementById('subcontent').innerHTML = detailinfo3
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -374,6 +412,11 @@
                     marker.addListener('click', function() {
 				  	infowindow.open(map, marker);
 				 });
+                    document.getElementById('cname').innerHTML = address
+				 		document.getElementById('title').innerHTML = detailinfo1
+				 		document.getElementById('content').innerHTML = detailinfo2
+				 		document.getElementById('subcontent').innerHTML = detailinfo3
+                    
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -555,7 +598,10 @@
 		<div id="google_map" ></div>
 
 	<div class = "etc">
-
+		<h2 id="cname"></h2>
+		<h3 id = 'title'></h3>
+		<p id = 'content'></p>
+		<p id = 'subcontent'></p>
 
 	</div>
 	</body>
