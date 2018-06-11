@@ -1,28 +1,26 @@
 
-.box{
-  margin: 100px auto;
-  width: 300px;
-  height: 50px;
+body{
+  text-align:center;
+}
+body:before{
+  content:'';
+  height:100%;
+  display:inline-block;
+  vertical-align:middle;
 }
 
-
 .container-4{
-  position: absolute;
-  top : 8%;
-  left : 10%;
-  width: 400px;
-  vertical-align: middle;
-  white-space: nowrap;
+  margin:0 auto;
+  width: 800px;
 }
 
 
 .container-4 input#search{
-  width: 100px;
-  height: 48px;
+  width: 200px;
+  height: 70px;
   background: #2b303b;
   border: none;
-  font-size: 10pt;
-  float: left;
+  font-size: 30pt;
   color: #fff;
   padding-left: 15px;
   -webkit-border-radius: 5px;
@@ -33,13 +31,6 @@
 }
 
 
-.wrap {
-    position: absolute;
-    top: 5%;
-    left: 38%;
-  
-    text-align: center;
-}
 
 a {
     -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
@@ -55,18 +46,105 @@ a {
     padding: 20px 30px;
 }
 
-a.button {
-    color: rgba(30, 22, 54, 0.6);
-    box-shadow: rgba(30, 22, 54, 0.4) 0 0px 0px 2px inset;
+button{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+button:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
 }
 
-a.button:hover {
-    color: rgba(255, 255, 255, 0.85);
-    box-shadow: rgba(30, 22, 54, 0.7) 0 0px 0px 40px inset;
+.button2{
+  background:#1AAB8A;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:45px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+.button2:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+.button2:before,.button2:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+.button2:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.button2:hover:before,.button2:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+.container-3{
+  margin:0 auto;
+  position: absolute;
+  top :9%;
+  left : 11%;
+}
+
+
+.container-3 input#search{
+  width: 150px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 30pt;
+  color: #fff;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-right: 3px;
+
 }
 
 .cliniclist {
-  border: 2px solid green; 
+  border: 2px solid gray; 
   border-radius: 2em;
   position: absolute;
   top :7%;
@@ -81,7 +159,7 @@ a.button:hover {
   border: 2px solid gray; 
   border-radius: 2em;
   position: absolute;
-  top :25%;
+  top :27%;
   left : 8%;
   width: 550px;
   height: 575px;
@@ -89,7 +167,8 @@ a.button:hover {
 }
 
 .etc {
-  border: 2px solid black; 
+  overflow:scroll;
+  border: 2px solid gray; 
   border-radius: 2em;
   position: absolute;
   top :52%;
@@ -100,3 +179,9 @@ a.button:hover {
 }
 
 
+.button1{
+  border: 0;
+  outline: 0;
+  background-color: white;
+  font-size: 20px;
+}
