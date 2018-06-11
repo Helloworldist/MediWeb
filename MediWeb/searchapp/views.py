@@ -14,7 +14,7 @@ utils=rpackages.importr('utils')	# R 기본 패키지 호출
 robj.r('setwd("./")')
 r.library('plyr')
 
-robj.r('load("~/MediWeb-master/R_file/main.RData")')
+robj.r('load("~/Desktop/MediWeb-master/R_file/main.RData")')
 robj.r('table_region<-data.frame()')
 
 	##### Category by Region #####
@@ -132,19 +132,16 @@ def search(request):
 
 		file.close()
 
-		info1 = ''
-		info2 = ''
-		info3 = ''
+
 		
 		for i in range(1,10):
 			try:
-				for text in moreinfo.getDetailinfo1(resultOfHos[i][0]):
-					info1 = info1 + text
+				info1, info2 = moreinfo.getDetailinfo1(resultOfHos[i][0])
+					
+				info3 = moreinfo.getDetailinfo2(resultOfHos[i][0])
 
-				info2 = moreinfo.getDetailinfo2(resultOfHos[i][0])
-
-				for text in moreinfo.getDetailinfo3(resultOfHos[i][0]):
-					info3 = info3 + text
+				info4, info5 = moreinfo.getDetailinfo3(resultOfHos[i][0])
+					
 					
 				lists = List(
 						index = i,
@@ -153,7 +150,9 @@ def search(request):
 						Y = resultOfHos[i][17],
 						detailinfo1 = info1,
 						detailinfo2 = info2,
-						detailinfo3 = info3,)	# 병원명
+						detailinfo3 = info3,
+						detailinfo4 = list(set(info4)),
+						detailinfo5 = info5,)	# 병원명
 			except:
 				pass
 

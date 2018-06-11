@@ -10,3 +10,5 @@ class List(models.Model):
 	detailinfo1 = models.TextField(default = '')
 	detailinfo2 = models.TextField(default = '')
 	detailinfo3 = models.TextField(default = '')
+	detailinfo4 = models.TextField(default = '')
+	detailinfo5 = models.TextField(default = '')
