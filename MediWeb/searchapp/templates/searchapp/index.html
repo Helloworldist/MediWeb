@@ -13,7 +13,9 @@
 	<script type = "text/javascript" src = '{% static "jquery/jquery.autocomplete.js" %}'></script>
 	<link rel ="stylesheet" type = "text/css" href = '{% static "jquery/jquery.autocomplete.css" %}'/>
 	<style type="text/css">
+        body{
 
+        }
 		.cliniclist .reallist .ui-selecting { 
 			background: pink; 
 		}
@@ -31,7 +33,6 @@
 
 			font-size: 10px; 
 			padding: .5em; 
-			border: 3px solid yellow; 
 		}
 
 	</style>
@@ -67,6 +68,9 @@
             	var detailinfo2 = document.getElementById("detailinfo1-2").value;
 
             	var detailinfo3 = document.getElementById("detailinfo1-3").value;
+                var detailinfo4 = document.getElementById("detailinfo1-4").value;
+
+                var detailinfo5 = document.getElementById("detailinfo1-5").value;
 
             	var address = document.getElementById('address1').value;   
 
@@ -92,12 +96,14 @@
 				 	document.getElementById('title').innerHTML = detailinfo1
 				 	document.getElementById('content').innerHTML = detailinfo2
 				 	document.getElementById('subcontent').innerHTML = detailinfo3
+                    document.getElementById('subcontent1').innerHTML = detailinfo4
+                    document.getElementById('subcontent2').innerHTML = detailinfo5
 
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
                 });
-
+ 
                
 
             }
@@ -109,6 +115,9 @@
 
             	var detailinfo3 = document.getElementById("detailinfo2-3").value;
 
+                var detailinfo4 = document.getElementById("detailinfo2-4").value;
+
+                var detailinfo5 = document.getElementById("detailinfo2-5").value;
             	 var address = document.getElementById('address2').value;   
 
             	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
@@ -132,6 +141,9 @@
 				 	document.getElementById('title').innerHTML = detailinfo1
 				 	document.getElementById('content').innerHTML = detailinfo2
 				 	document.getElementById('subcontent').innerHTML = detailinfo3
+                     document.getElementById('subcontent1').innerHTML = detailinfo4
+                    document.getElementById('subcontent2').innerHTML = detailinfo5
+
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -147,6 +159,10 @@
             	var detailinfo2 = document.getElementById("detailinfo3-2").value;
 
             	var detailinfo3 = document.getElementById("detailinfo3-3").value;
+
+                var detailinfo4 = document.getElementById("detailinfo3-4").value;
+
+                var detailinfo5 = document.getElementById("detailinfo3-5").value;
 
             	var address = document.getElementById('address3').value;  
 
@@ -171,6 +187,9 @@
 				 	document.getElementById('title').innerHTML = detailinfo1
 				 	document.getElementById('content').innerHTML = detailinfo2
 				 	document.getElementById('subcontent').innerHTML = detailinfo3
+                     document.getElementById('subcontent1').innerHTML = detailinfo4
+                    document.getElementById('subcontent2').innerHTML = detailinfo5
+
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -183,6 +202,10 @@
             	var detailinfo2 = document.getElementById("detailinfo4-2").value;
 
             	var detailinfo3 = document.getElementById("detailinfo4-3").value;
+
+                var detailinfo4 = document.getElementById("detailinfo4-4").value;
+
+                var detailinfo5 = document.getElementById("detailinfo4-5").value;
 
             	 var address = document.getElementById('address4').value;   
 
@@ -206,6 +229,9 @@
 				 	document.getElementById('title').innerHTML = detailinfo1
 				 	document.getElementById('content').innerHTML = detailinfo2
 				 	document.getElementById('subcontent').innerHTML = detailinfo3
+                     document.getElementById('subcontent1').innerHTML = detailinfo4
+                    document.getElementById('subcontent2').innerHTML = detailinfo5
+
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -219,6 +245,10 @@
             	var detailinfo2 = document.getElementById("detailinfo5-2").value;
 
             	var detailinfo3 = document.getElementById("detailinfo5-3").value;
+
+                var detailinfo4 = document.getElementById("detailinfo5-4").value;
+
+                var detailinfo5 = document.getElementById("detailinfo5-5").value;
 
             	var address = document.getElementById('address5').value; 
 
@@ -243,6 +273,9 @@
 				 	document.getElementById('title').innerHTML = detailinfo1
 				 	document.getElementById('content').innerHTML = detailinfo2
 				 	document.getElementById('subcontent').innerHTML = detailinfo3
+                     document.getElementById('subcontent1').innerHTML = detailinfo4
+                    document.getElementById('subcontent2').innerHTML = detailinfo5
+
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -255,6 +288,10 @@
             	var detailinfo2 = document.getElementById("detailinfo6-2").value;
 
             	var detailinfo3 = document.getElementById("detailinfo6-3").value;
+
+                var detailinfo4 = document.getElementById("detailinfo6-4").value;
+
+                var detailinfo5 = document.getElementById("detailinfo6-5").value;
 
             	var address = document.getElementById('address6').value; 
 
@@ -278,17 +315,24 @@
 				 	document.getElementById('title').innerHTML = detailinfo1
 				 	document.getElementById('content').innerHTML = detailinfo2
 				 	document.getElementById('subcontent').innerHTML = detailinfo3
+                     document.getElementById('subcontent1').innerHTML = detailinfo4
+                    document.getElementById('subcontent2').innerHTML = detailinfo5
+
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
                 });
             }
              function codeAddress7() {
-             	var detailinfo7 = document.getElementById("detailinfo7-1").value;
+             	var detailinfo1 = document.getElementById("detailinfo7-1").value;
 
-            	var detailinfo7 = document.getElementById("detailinfo7-2").value;
+            	var detailinfo2 = document.getElementById("detailinfo7-2").value;
 
-            	var detailinfo7 = document.getElementById("detailinfo7-3").value;
+            	var detailinfo3 = document.getElementById("detailinfo7-3").value;
+
+                var detailinfo4 = document.getElementById("detailinfo7-4").value;
+
+                var detailinfo5 = document.getElementById("detailinfo7-5").value;
 
             	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
 
@@ -313,6 +357,9 @@
 				 	document.getElementById('title').innerHTML = detailinfo1
 				 	document.getElementById('content').innerHTML = detailinfo2
 				 	document.getElementById('subcontent').innerHTML = detailinfo3
+                     document.getElementById('subcontent1').innerHTML = detailinfo4
+                    document.getElementById('subcontent2').innerHTML = detailinfo5
+
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -325,6 +372,10 @@
             	var detailinfo2 = document.getElementById("detailinfo8-2").value;
 
             	var detailinfo3 = document.getElementById("detailinfo8-3").value;
+
+                var detailinfo4 = document.getElementById("detailinfo8-4").value;
+
+                var detailinfo5 = document.getElementById("detailinfo8-5").value;
 
             	var address = document.getElementById('address8').value; 
 
@@ -348,6 +399,9 @@
 				 	document.getElementById('title').innerHTML = detailinfo1
 				 	document.getElementById('content').innerHTML = detailinfo2
 				 	document.getElementById('subcontent').innerHTML = detailinfo3
+                     document.getElementById('subcontent1').innerHTML = detailinfo4
+                    document.getElementById('subcontent2').innerHTML = detailinfo5
+
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -360,6 +414,10 @@
             	var detailinfo2 = document.getElementById("detailinfo9-2").value;
 
             	var detailinfo3 = document.getElementById("detailinfo9-3").value;
+
+                var detailinfo4 = document.getElementById("detailinfo9-4").value;
+
+                var detailinfo5 = document.getElementById("detailinfo9-5").value;
             	 var address = document.getElementById('address9').value;  
 
             	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
@@ -382,6 +440,9 @@
 				 		document.getElementById('title').innerHTML = detailinfo1
 				 		document.getElementById('content').innerHTML = detailinfo2
 				 		document.getElementById('subcontent').innerHTML = detailinfo3
+                         document.getElementById('subcontent1').innerHTML = detailinfo4
+                    document.getElementById('subcontent2').innerHTML = detailinfo5
+
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
                     }
@@ -393,6 +454,10 @@
             	var detailinfo2 = document.getElementById("detailinfo10-2").value;
 
             	var detailinfo3 = document.getElementById("detailinfo10-3").value;
+
+                var detailinfo4 = document.getElementById("detailinfo10-4").value;
+
+                var detailinfo5 = document.getElementById("detailinfo10-5").value;
 
             	var address = document.getElementById('address10').value;    
 
@@ -416,6 +481,9 @@
 				 		document.getElementById('title').innerHTML = detailinfo1
 				 		document.getElementById('content').innerHTML = detailinfo2
 				 		document.getElementById('subcontent').innerHTML = detailinfo3
+                         document.getElementById('subcontent1').innerHTML = detailinfo4
+                    document.getElementById('subcontent2').innerHTML = detailinfo5
+
                     
                     } else {
                         alert('Geocode was not successful for the following reason: ' + status);
@@ -456,6 +524,14 @@
 					});
 				});
 			</script>
+            <div class="container-3">
+                    <input type="search" id="search" placeholder="" name ="lo1"/>
+                    <input type="search" id="search" placeholder="" name ="lo2"/>
+                    <input type="search" id="search" placeholder="" name ="lo3"/>
+                    <br>
+                    <br>
+                    <button class="button2" type = "submit">Search</button>
+                </div>
 		<div class = "cliniclist" id = "panel"  style="overflow:scroll;">
 			
 			<ul class="reallist">
@@ -465,8 +541,10 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo1-1" name = "name" value="{{list.detailinfo1}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo1-2" name = "name" value="{{list.detailinfo2}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo1-3" name = "name" value="{{list.detailinfo3}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo1-4" name = "name" value="{{list.detailinfo4}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo1-5" name = "name" value="{{list.detailinfo5}}">
 			<input type = "textbox" style = "display:none;" id = "address1" name = "name" value="{{list.name}}">
-			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress1()" ></li>
+			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress1()" ></li>
 			{% endif %}
 			{% endfor %}
 			{% endif %}
@@ -478,8 +556,10 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo2-1" name = "name" value="{{list.detailinfo1}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo2-2" name = "name" value="{{list.detailinfo2}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo2-3" name = "name" value="{{list.detailinfo3}}">
+             <input type = "textbox" style = "display:none;" id = "detailinfo2-4" name = "name" value="{{list.detailinfo4}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo2-5" name = "name" value="{{list.detailinfo5}}">
 			<input type = "textbox" style = "display:none;" id = "address2" name = "name" value="{{list.name}}">
-			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress2()" ></li>
+			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress2()" ></li>
 			{% endif %}
 			{% endfor %}
 			{% endif %}
@@ -490,8 +570,10 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo3-1" name = "name" value="{{list.detailinfo1}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo3-2" name = "name" value="{{list.detailinfo2}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo3-3" name = "name" value="{{list.detailinfo3}}">
+             <input type = "textbox" style = "display:none;" id = "detailinfo3-4" name = "name" value="{{list.detailinfo4}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo3-5" name = "name" value="{{list.detailinfo5}}">
 			<input type = "textbox" style = "display:none;" id = "address3" name = "name" value="{{list.name}}">
-			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress3()" ></li>
+			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress3()" ></li>
 			{% endif %}
 			{% endfor %}
 			{% endif %}
@@ -501,8 +583,10 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo4-1" name = "name" value="{{list.detailinfo1}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo4-2" name = "name" value="{{list.detailinfo2}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo4-3" name = "name" value="{{list.detailinfo3}}">
+             <input type = "textbox" style = "display:none;" id = "detailinfo4-4" name = "name" value="{{list.detailinfo4}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo4-5" name = "name" value="{{list.detailinfo5}}">
 			<input type = "textbox" style = "display:none;" id = "address4" name = "name" value="{{list.name}}">
-			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress4()" ></li>
+			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress4()" ></li>
 			{% endif %}
 			{% endfor %}
 			{% endif %}
@@ -514,8 +598,10 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo5-1" name = "name" value="{{list.detailinfo1}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo5-2" name = "name" value="{{list.detailinfo2}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo5-3" name = "name" value="{{list.detailinfo3}}">
+             <input type = "textbox" style = "display:none;" id = "detailinfo5-4" name = "name" value="{{list.detailinfo4}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo5-5" name = "name" value="{{list.detailinfo5}}">
 			<input type = "textbox" style = "display:none;" id = "address5" name = "name" value="{{list.name}}">
-			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress5()" ></li>
+			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress5()" ></li>
 			{% endif %}
 			{% endfor %}
 			{% endif %}
@@ -526,8 +612,10 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo6-1" name = "name" value="{{list.detailinfo1}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo6-2" name = "name" value="{{list.detailinfo2}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo6-3" name = "name" value="{{list.detailinfo3}}">
+             <input type = "textbox" style = "display:none;" id = "detailinfo6-4" name = "name" value="{{list.detailinfo4}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo6-5" name = "name" value="{{list.detailinfo5}}">
 			<input type = "textbox" style = "display:none;" id = "address6" name = "name" value="{{list.name}}">
-			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress6()" ></li>
+			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress6()" ></li>
 			{% endif %}
 			{% endfor %}
 			{% endif %}
@@ -537,8 +625,10 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo7-1" name = "name" value="{{list.detailinfo1}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo7-2" name = "name" value="{{list.detailinfo2}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo7-3" name = "name" value="{{list.detailinfo3}}">
+             <input type = "textbox" style = "display:none;" id = "detailinfo7-4" name = "name" value="{{list.detailinfo4}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo7-5" name = "name" value="{{list.detailinfo5}}">
 			<input type = "textbox" style = "display:none;" id = "address7" name = "name" value="{{list.name}}">
-			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress7()" ></li>
+			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress7()" ></li>
 			{% endif %}
 			{% endfor %}
 			{% endif %}
@@ -550,8 +640,10 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo8-1" name = "name" value="{{list.detailinfo1}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo8-2" name = "name" value="{{list.detailinfo2}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo8-3" name = "name" value="{{list.detailinfo3}}">
+             <input type = "textbox" style = "display:none;" id = "detailinfo8-4" name = "name" value="{{list.detailinfo4}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo8-5" name = "name" value="{{list.detailinfo5}}">
 			<input type = "textbox" style = "display:none;" id = "address8" name = "name" value="{{list.name}}">
-			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress8()" ></li>
+			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress8()" ></li>
 			{% endif %}
 			{% endfor %}
 			{% endif %}
@@ -562,8 +654,10 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo9-1" name = "name" value="{{list.detailinfo1}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo9-2" name = "name" value="{{list.detailinfo2}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo9-3" name = "name" value="{{list.detailinfo3}}">
+             <input type = "textbox" style = "display:none;" id = "detailinfo9-4" name = "name" value="{{list.detailinfo4}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo9-5" name = "name" value="{{list.detailinfo5}}">
 			<input type = "textbox" style = "display:none;" id = "address9" name = "name" value="{{list.name}}">
-			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress9()" ></li>
+			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress9()" ></li>
 			{% endif %}
 			{% endfor %}
 			{% endif %}
@@ -573,8 +667,10 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo10-1" name = "name" value="{{list.detailinfo1}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo10-2" name = "name" value="{{list.detailinfo2}}">
 			<input type = "textbox" style = "display:none;" id = "detailinfo10-3" name = "name" value="{{list.detailinfo3}}">
+             <input type = "textbox" style = "display:none;" id = "detailinfo10-4" name = "name" value="{{list.detailinfo4}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo10-5" name = "name" value="{{list.detailinfo5}}">
 			<input type = "textbox" style = "display:none;" id = "address10" name = "name" value="{{list.name}}">
-			 <li class="ui-widget-content"><input type="button" value="{{list.name}}" onclick="codeAddress10()" ></li>
+			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress10()" ></li>
 			{% endif %}
 			{% endfor %}
 			{% endif %}
@@ -600,8 +696,10 @@
 	<div class = "etc">
 		<h2 id="cname"></h2>
 		<h3 id = 'title'></h3>
-		<p id = 'content'></p>
+        <p id = "content"></p>
 		<p id = 'subcontent'></p>
+        <p id = 'subcontent1'></p>
+        <p id = 'subcontent2'></p>
 
 	</div>
 	</body>
