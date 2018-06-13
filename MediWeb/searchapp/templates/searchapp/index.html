@@ -72,6 +72,10 @@
 
                 var detailinfo5 = document.getElementById("detailinfo1-5").value;
 
+                var X = document.getElementById("detailinfo1-6").value;
+
+                var Y = document.getElementById("detailinfo1-7").value;
+
             	var address = document.getElementById('address1').value;   
 
             	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
@@ -86,7 +90,7 @@
                         map.setCenter(results[0].geometry.location);
                         var marker = new google.maps.Marker({
                             map: map,
-                            position: results[0].geometry.location
+                            position: new google.maps.LatLng(X, Y)
                         });
 
                         marker.addListener('click', function() {
@@ -118,6 +122,9 @@
                 var detailinfo4 = document.getElementById("detailinfo2-4").value;
 
                 var detailinfo5 = document.getElementById("detailinfo2-5").value;
+                 var X = document.getElementById("detailinfo2-6").value;
+
+                var Y = document.getElementById("detailinfo2-7").value;
             	 var address = document.getElementById('address2').value;   
 
             	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
@@ -131,7 +138,7 @@
                         map.setCenter(results[0].geometry.location);
                         var marker = new google.maps.Marker({
                             map: map,
-                            position: results[0].geometry.location
+                            position: new google.maps.LatLng(X, Y)
                         });
 
                         marker.addListener('click', function() {
@@ -163,6 +170,9 @@
                 var detailinfo4 = document.getElementById("detailinfo3-4").value;
 
                 var detailinfo5 = document.getElementById("detailinfo3-5").value;
+                 var X = document.getElementById("detailinfo3-6").value;
+
+                var Y = document.getElementById("detailinfo3-7").value;
 
             	var address = document.getElementById('address3').value;  
 
@@ -177,7 +187,7 @@
                         map.setCenter(results[0].geometry.location);
                         var marker = new google.maps.Marker({
                             map: map,
-                            position: results[0].geometry.location
+                            position: new google.maps.LatLng(X, Y)
                         });
 	                    marker.addListener('click', function() {
 					  	infowindow.open(map, marker);
@@ -206,6 +216,9 @@
                 var detailinfo4 = document.getElementById("detailinfo4-4").value;
 
                 var detailinfo5 = document.getElementById("detailinfo4-5").value;
+                 var X = document.getElementById("detailinfo4-6").value;
+
+                var Y = document.getElementById("detailinfo4-7").value;
 
             	 var address = document.getElementById('address4').value;   
 
@@ -220,7 +233,7 @@
                         map.setCenter(results[0].geometry.location);
                         var marker = new google.maps.Marker({
                             map: map,
-                            position: results[0].geometry.location
+                            position: new google.maps.LatLng(X, Y)
                         });
                         marker.addListener('click', function() {
 				  		infowindow.open(map, marker);
@@ -249,6 +262,9 @@
                 var detailinfo4 = document.getElementById("detailinfo5-4").value;
 
                 var detailinfo5 = document.getElementById("detailinfo5-5").value;
+                 var X = document.getElementById("detailinfo5-6").value;
+
+                var Y = document.getElementById("detailinfo5-7").value;
 
             	var address = document.getElementById('address5').value; 
 
@@ -264,7 +280,7 @@
                         map.setCenter(results[0].geometry.location);
                         var marker = new google.maps.Marker({
                             map: map,
-                            position: results[0].geometry.location
+                            position: new google.maps.LatLng(X, Y)
                         });
                     marker.addListener('click', function() {
 				  	infowindow.open(map, marker);
@@ -293,6 +309,10 @@
 
                 var detailinfo5 = document.getElementById("detailinfo6-5").value;
 
+                 var X = document.getElementById("detailinfo6-6").value;
+
+                var Y = document.getElementById("detailinfo6-7").value;
+
             	var address = document.getElementById('address6').value; 
 
             	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
@@ -306,7 +326,7 @@
                         map.setCenter(results[0].geometry.location);
                         var marker = new google.maps.Marker({
                             map: map,
-                            position: results[0].geometry.location
+                            position: new google.maps.LatLng(X, Y)
                         });
                     marker.addListener('click', function() {
 				  	infowindow.open(map, marker);
@@ -333,6 +353,9 @@
                 var detailinfo4 = document.getElementById("detailinfo7-4").value;
 
                 var detailinfo5 = document.getElementById("detailinfo7-5").value;
+                 var X = document.getElementById("detailinfo7-6").value;
+
+                var Y = document.getElementById("detailinfo7-7").value;
 
             	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
 
@@ -347,7 +370,7 @@
                         map.setCenter(results[0].geometry.location);
                         var marker = new google.maps.Marker({
                             map: map,
-                            position: results[0].geometry.location
+                            position: new google.maps.LatLng(X, Y)
                         });
 
                     marker.addListener('click', function() {
@@ -377,6 +400,10 @@
 
                 var detailinfo5 = document.getElementById("detailinfo8-5").value;
 
+                 var X = document.getElementById("detailinfo8-6").value;
+
+                var Y = document.getElementById("detailinfo8-7").value;
+
             	var address = document.getElementById('address8').value; 
 
             	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
@@ -390,7 +417,7 @@
                         map.setCenter(results[0].geometry.location);
                         var marker = new google.maps.Marker({
                             map: map,
-                            position: results[0].geometry.location
+                            position: new google.maps.LatLng(X, Y)
                         });
                     marker.addListener('click', function() {
 				  	infowindow.open(map, marker);
@@ -418,6 +445,10 @@
                 var detailinfo4 = document.getElementById("detailinfo9-4").value;
 
                 var detailinfo5 = document.getElementById("detailinfo9-5").value;
+
+                var X = document.getElementById("detailinfo9-6").value;
+
+                var Y = document.getElementById("detailinfo9-7").value;
             	 var address = document.getElementById('address9').value;  
 
             	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
@@ -431,7 +462,7 @@
                         map.setCenter(results[0].geometry.location);
                         var marker = new google.maps.Marker({
                             map: map,
-                            position: results[0].geometry.location
+                            position: new google.maps.LatLng(X, Y)
                         });
                     marker.addListener('click', function() {
 				  	infowindow.open(map, marker);
@@ -459,6 +490,10 @@
 
                 var detailinfo5 = document.getElementById("detailinfo10-5").value;
 
+                 var X = document.getElementById("detailinfo10-6").value;
+
+                var Y = document.getElementById("detailinfo10-7").value;
+
             	var address = document.getElementById('address10').value;    
 
             	var contentString = '<h2>' + address+'</h2>'+detailinfo1+'<br>'+detailinfo2+'<br>'+detailinfo3
@@ -472,7 +507,7 @@
                         map.setCenter(results[0].geometry.location);
                         var marker = new google.maps.Marker({
                             map: map,
-                            position: results[0].geometry.location
+                            position: new google.maps.LatLng(X, Y)
                         });
                     marker.addListener('click', function() {
 				  	infowindow.open(map, marker);
@@ -546,6 +581,8 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo1-3" name = "name" value="{{list.detailinfo3}}">
             <input type = "textbox" style = "display:none;" id = "detailinfo1-4" name = "name" value="{{list.detailinfo4}}">
             <input type = "textbox" style = "display:none;" id = "detailinfo1-5" name = "name" value="{{list.detailinfo5}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo1-6" name = "name" value="{{list.X}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo1-7" name = "name" value="{{list.Y}}">
 			<input type = "textbox" style = "display:none;" id = "address1" name = "name" value="{{list.name}}">
 			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress1()" ></li>
 			{% endif %}
@@ -561,6 +598,8 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo2-3" name = "name" value="{{list.detailinfo3}}">
              <input type = "textbox" style = "display:none;" id = "detailinfo2-4" name = "name" value="{{list.detailinfo4}}">
             <input type = "textbox" style = "display:none;" id = "detailinfo2-5" name = "name" value="{{list.detailinfo5}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo2-6" name = "name" value="{{list.X}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo2-7" name = "name" value="{{list.Y}}">
 			<input type = "textbox" style = "display:none;" id = "address2" name = "name" value="{{list.name}}">
 			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress2()" ></li>
 			{% endif %}
@@ -575,6 +614,8 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo3-3" name = "name" value="{{list.detailinfo3}}">
              <input type = "textbox" style = "display:none;" id = "detailinfo3-4" name = "name" value="{{list.detailinfo4}}">
             <input type = "textbox" style = "display:none;" id = "detailinfo3-5" name = "name" value="{{list.detailinfo5}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo3-6" name = "name" value="{{list.X}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo3-7" name = "name" value="{{list.Y}}">
 			<input type = "textbox" style = "display:none;" id = "address3" name = "name" value="{{list.name}}">
 			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress3()" ></li>
 			{% endif %}
@@ -588,6 +629,8 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo4-3" name = "name" value="{{list.detailinfo3}}">
              <input type = "textbox" style = "display:none;" id = "detailinfo4-4" name = "name" value="{{list.detailinfo4}}">
             <input type = "textbox" style = "display:none;" id = "detailinfo4-5" name = "name" value="{{list.detailinfo5}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo4-6" name = "name" value="{{list.X}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo4-7" name = "name" value="{{list.Y}}">
 			<input type = "textbox" style = "display:none;" id = "address4" name = "name" value="{{list.name}}">
 			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress4()" ></li>
 			{% endif %}
@@ -603,6 +646,8 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo5-3" name = "name" value="{{list.detailinfo3}}">
              <input type = "textbox" style = "display:none;" id = "detailinfo5-4" name = "name" value="{{list.detailinfo4}}">
             <input type = "textbox" style = "display:none;" id = "detailinfo5-5" name = "name" value="{{list.detailinfo5}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo5-6" name = "name" value="{{list.X}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo5-7" name = "name" value="{{list.Y}}">
 			<input type = "textbox" style = "display:none;" id = "address5" name = "name" value="{{list.name}}">
 			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress5()" ></li>
 			{% endif %}
@@ -617,6 +662,8 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo6-3" name = "name" value="{{list.detailinfo3}}">
              <input type = "textbox" style = "display:none;" id = "detailinfo6-4" name = "name" value="{{list.detailinfo4}}">
             <input type = "textbox" style = "display:none;" id = "detailinfo6-5" name = "name" value="{{list.detailinfo5}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo6-6" name = "name" value="{{list.X}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo6-7" name = "name" value="{{list.Y}}">
 			<input type = "textbox" style = "display:none;" id = "address6" name = "name" value="{{list.name}}">
 			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress6()" ></li>
 			{% endif %}
@@ -630,6 +677,8 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo7-3" name = "name" value="{{list.detailinfo3}}">
              <input type = "textbox" style = "display:none;" id = "detailinfo7-4" name = "name" value="{{list.detailinfo4}}">
             <input type = "textbox" style = "display:none;" id = "detailinfo7-5" name = "name" value="{{list.detailinfo5}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo7-6" name = "name" value="{{list.X}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo7-7" name = "name" value="{{list.Y}}">
 			<input type = "textbox" style = "display:none;" id = "address7" name = "name" value="{{list.name}}">
 			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress7()" ></li>
 			{% endif %}
@@ -645,6 +694,8 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo8-3" name = "name" value="{{list.detailinfo3}}">
              <input type = "textbox" style = "display:none;" id = "detailinfo8-4" name = "name" value="{{list.detailinfo4}}">
             <input type = "textbox" style = "display:none;" id = "detailinfo8-5" name = "name" value="{{list.detailinfo5}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo8-6" name = "name" value="{{list.X}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo8-7" name = "name" value="{{list.Y}}">
 			<input type = "textbox" style = "display:none;" id = "address8" name = "name" value="{{list.name}}">
 			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress8()" ></li>
 			{% endif %}
@@ -659,6 +710,8 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo9-3" name = "name" value="{{list.detailinfo3}}">
              <input type = "textbox" style = "display:none;" id = "detailinfo9-4" name = "name" value="{{list.detailinfo4}}">
             <input type = "textbox" style = "display:none;" id = "detailinfo9-5" name = "name" value="{{list.detailinfo5}}">
+             <input type = "textbox" style = "display:none;" id = "detailinfo9-6" name = "name" value="{{list.X}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo9-7" name = "name" value="{{list.Y}}">
 			<input type = "textbox" style = "display:none;" id = "address9" name = "name" value="{{list.name}}">
 			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress9()" ></li>
 			{% endif %}
@@ -672,6 +725,8 @@
 			<input type = "textbox" style = "display:none;" id = "detailinfo10-3" name = "name" value="{{list.detailinfo3}}">
              <input type = "textbox" style = "display:none;" id = "detailinfo10-4" name = "name" value="{{list.detailinfo4}}">
             <input type = "textbox" style = "display:none;" id = "detailinfo10-5" name = "name" value="{{list.detailinfo5}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo10-6" name = "name" value="{{list.X}}">
+            <input type = "textbox" style = "display:none;" id = "detailinfo10-7" name = "name" value="{{list.Y}}">
 			<input type = "textbox" style = "display:none;" id = "address10" name = "name" value="{{list.name}}">
 			 <li class="ui-widget-content"><input class = button1 type="button" value="{{list.name}}" onclick="codeAddress10()" ></li>
 			{% endif %}
