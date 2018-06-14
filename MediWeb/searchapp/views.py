@@ -80,47 +80,47 @@ def search(request):
 
 		num = str(value.get(lo3))
 		
-		if lo3 not in value:
-			print("평가결과가 없음")
-		elif num == 11:
-			{
-				robj.r('table_result<<-data.frame()\n'
-					'table_region<<-table_region[order(table_region$item.asmGrd'+str(num)+'),]\n'
-					'for(i in 1:nrow(table_region)) {\n'
-					'if(((as.character(table_region$item.asmGrd'+str(num)+'[i])=="등급제외" || as.character(table_region$item.asmGrd'+str(num)+'[i])=="평가제외")) &&'
-					'(as.character(table_region$item.asmGrd16[i])=="등급제외" || as.character(table_region$item.asmGrd16[i])=="평가제외")))'
-					'next\n'
-					'table_result<<-rbind.fill(table_result, table_region[i,])}\n'
-					'table_result<<-table_result[order(table_result$item.asmGrd'+str(num)+'),]\n'
-					'print(head(table_result$item.yadmNm.x, 10))\n'
-					'write.csv(table_result, file="result.csv", row.names=FALSE)')
-			}
-		elif num == 12:
-			{
-				robj.r('table_result<<-data.frame()\n'
-					'table_region<<-table_region[order(table_region$item.asmGrd'+str(num)+'),]\n'
-					'for(i in 1:nrow(table_region)) {\n'
-					'if(((as.character(table_region$item.asmGrd'+str(num)+'[i])=="등급제외" || as.character(table_region$item.asmGrd'+str(num)+'[i])=="평가제외")) &&'
-					'(as.character(table_region$item.asmGrd15[i])=="등급제외" || as.character(table_region$item.asmGrd15[i])=="평가제외")))'
-					'next\n'
-					'table_result<<-rbind.fill(table_result, table_region[i,])}\n'
-					'table_result<<-table_result[order(table_result$item.asmGrd'+str(num)+'),]\n'
-					'print(head(table_result$item.yadmNm.x, 10))\n'
-					'write.csv(table_result, file="result.csv", row.names=FALSE)')
-			}
-		else:
-			{
-				robj.r('table_result<<-data.frame()\n'
-					'table_region<<-table_region[order(table_region$item.asmGrd'+str(num)+'),]\n'
-					'for(i in 1:nrow(table_region)) {\n'
-					'if(as.character(table_region$item.asmGrd'+str(num)+'[i])=="등급제외" || as.character(table_region$item.asmGrd'+str(num)+'[i])=="평가제외")\n'
-					'next\n'
-					'table_result<<-rbind.fill(table_result, table_region[i,])}\n'
-					'table_result<<-table_result[order(table_result$item.asmGrd'+str(num)+'),]\n'
-					'print(head(table_result$item.yadmNm.x, 10))\n'
-					'write.csv(table_result, file="result.csv", row.names=FALSE)')
-			}
-
+		try:
+			if lo3 not in value:
+				print("평가결과가 없음")
+			elif num == 11:
+				{
+					robj.r('table_result<<-data.frame()\n'
+						'table_region<<-table_region[order(table_region$item.asmGrd'+str(num)+'),]\n'
+						'for(i in 1:nrow(table_region)) {\n'
+						'if(((as.character(table_region$item.asmGrd'+str(num)+'[i])=="등급제외" || as.character(table_region$item.asmGrd'+str(num)+'[i])=="평가제외")) &&'
+						'(as.character(table_region$item.asmGrd16[i])=="등급제외" || as.character(table_region$item.asmGrd16[i])=="평가제외")))'
+						'next\n'
+						'table_result<<-rbind.fill(table_result, table_region[i,])}\n'
+						'table_result<<-table_result[order(table_result$item.asmGrd'+str(num)+'),]\n'
+						'write.csv(table_result, file="result.csv", row.names=FALSE)')
+				}
+			elif num == 12:
+				{
+					robj.r('table_result<<-data.frame()\n'
+						'table_region<<-table_region[order(table_region$item.asmGrd'+str(num)+'),]\n'
+						'for(i in 1:nrow(table_region)) {\n'
+						'if(((as.character(table_region$item.asmGrd'+str(num)+'[i])=="등급제외" || as.character(table_region$item.asmGrd'+str(num)+'[i])=="평가제외")) &&'
+						'(as.character(table_region$item.asmGrd15[i])=="등급제외" || as.character(table_region$item.asmGrd15[i])=="평가제외")))'
+						'next\n'
+						'table_result<<-rbind.fill(table_result, table_region[i,])}\n'
+						'table_result<<-table_result[order(table_result$item.asmGrd'+str(num)+'),]\n'
+						'write.csv(table_result, file="result.csv", row.names=FALSE)')
+				}
+			else:
+				{
+					robj.r('table_result<<-data.frame()\n'
+						'table_region<<-table_region[order(table_region$item.asmGrd'+str(num)+'),]\n'
+						'for(i in 1:nrow(table_region)) {\n'
+						'if(as.character(table_region$item.asmGrd'+str(num)+'[i])=="등급제외" || as.character(table_region$item.asmGrd'+str(num)+'[i])=="평가제외")\n'
+						'next\n'
+						'table_result<<-rbind.fill(table_result, table_region[i,])}\n'
+						'table_result<<-table_result[order(table_result$item.asmGrd'+str(num)+'),]\n'
+						'write.csv(table_result, file="result.csv", row.names=FALSE)')
+				}
+		except:
+			pass
+			
 		resultOfHos = []
 		
 		file = open('./result.csv', 'r')
